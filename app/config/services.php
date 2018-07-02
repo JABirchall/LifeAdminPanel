@@ -133,3 +133,19 @@ $di->setShared('cache', function (){
     return $cache;
 });
 
+/**
+ * Start a RCON instance for when a rcon command is required
+ */
+$di->setShared('rcon', function () {
+    $config = $this->getConfig();
+    $rcon = new \App\Library\Rcon(
+        $config->rcon->host,
+        $config->rcon->password,
+        $config->rcon->port,
+        (array)$config->rcon->options
+    );
+
+    return $rcon;
+});
+
+

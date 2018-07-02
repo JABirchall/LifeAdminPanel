@@ -9,10 +9,10 @@ defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 return new \Phalcon\Config([
     'database' => [
         'adapter'     => 'Mysql',
-        'host'        => 'localhost',
-        'username'    => 'root',
-        'password'    => '',
-        'dbname'      => 'panel',
+        'host'        => '158.69.120.213',
+        'username'    => 'adminpanel',
+        'password'    => '814510124',
+        'dbname'      => 'maldenlife',
         'charset'     => 'utf8',
     ],
     'application' => [
@@ -37,5 +37,13 @@ return new \Phalcon\Config([
             'enableNotice' => false,
             'notice' => ''
         ],
+        'steamApiKey' => 'B0D1BCF3375162D6668741791694A971',
+
+        'rcon' => [
+            'ip' => '',
+            'username' => '',
+            'password' => '',
+            'options' => [],
+        ]
     ],
 ]);

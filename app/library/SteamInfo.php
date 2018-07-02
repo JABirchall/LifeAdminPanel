@@ -2,6 +2,9 @@
 
 namespace App\Library;
 
+use App\Library\LightOpenID;
+use Phalcon\Http\Response;
+
 class SteamInfo
 {
 
