@@ -68,8 +68,8 @@ $di->set('router', function () use ($di) {
 $di->setShared('db', function () {
     $config = $this->getConfig();
 
-    $class = Phalcon\Db\Adapter\Pdo::class . $config->database->adapter;
-    //$class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
+    //$class = Phalcon\Db\Adapter\Pdo::class . $config->database->adapter;
+    $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
     $params = [
         'host'     => $config->database->host,
         'username' => $config->database->username,

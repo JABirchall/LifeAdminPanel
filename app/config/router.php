@@ -8,6 +8,7 @@ $router->setDI($di);
 # endregion
 
 $router->add('/', 'Index::index');
+$router->add('/test', 'Test::index');
 
 # region Admin Routes
 $adminGroup = new Group();
