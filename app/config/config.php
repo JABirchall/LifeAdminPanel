@@ -15,6 +15,7 @@ return new \Phalcon\Config([
         'dbname'      => 'maldenlife',
         'charset'     => 'utf8',
     ],
+
     'application' => [
         'appDir'         => APP_PATH . '/',
         'controllersDir' => APP_PATH . '/controllers/',
@@ -37,6 +38,7 @@ return new \Phalcon\Config([
             'enableNotice' => false,
             'notice' => ''
         ],
+
         'steamApiKey' => 'B0D1BCF3375162D6668741791694A971',
 
         'rcon' => [
@@ -44,6 +46,6 @@ return new \Phalcon\Config([
             'username' => '',
             'password' => '',
             'options' => [],
-        ]
+        ],
     ],
 ]);
