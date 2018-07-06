@@ -1,8 +1,6 @@
 <?php
 namespace App\Library;
 
-use Phalcon\Debug\Dump;
-
 class Logger
 {
     public static function Log($admin, $user, $action)
