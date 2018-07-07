@@ -9,6 +9,7 @@ $router->setDI($di);
 
 $router->add('/', 'Index::index');
 $router->add('/logging', 'Logging::index');
+$router->add('/wip','Wip::index');
 
 # region Admin Routes
 $adminGroup = new Group();
