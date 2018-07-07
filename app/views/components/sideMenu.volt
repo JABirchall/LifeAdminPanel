@@ -6,7 +6,7 @@
          m-menu-vertical="1" m-menu-scrollable="0" m-menu-dropdown-timeout="500">
         <ul class="m-menu__nav m-menu__nav--dropdown-submenu-arrow ">
             <li class="m-menu__item m-menu__item--active" aria-haspopup="true">
-                <a href="index.html" class="m-menu__link ">
+                <a href="index" class="m-menu__link ">
                     <i class="m-menu__link-icon flaticon-line-graph"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
@@ -29,25 +29,25 @@
                     <span class="m-menu__arrow"></span>
                     <ul class="m-menu__subnav">
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/wip" class="m-menu__link ">
+                            <a href="/players/list" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Players</span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/wip" class="m-menu__link ">
+                            <a href="/players/vehicles" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Vehicles</span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/wip" class="m-menu__link ">
+                            <a href="/players/houses" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Houses</span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/wip" class="m-menu__link ">
+                            <a href="/players/containers" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Containers</span>
                             </a>
@@ -65,13 +65,13 @@
                     <span class="m-menu__arrow"></span>
                     <ul class="m-menu__subnav">
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/wip" class="m-menu__link ">
+                            <a href="/admin/logs" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Admin Logs</span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/wip" class="m-menu__link ">
+                            <a href="/admin/clogs" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Compensation Logs</span>
                             </a>
