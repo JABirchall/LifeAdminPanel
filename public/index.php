@@ -55,4 +55,4 @@ $content = $handledRequest->getContent();
 /**
  * Output the Response
  */
-echo str_replace(["\n","\r","\t"], '', $content);
+echo str_replace(["\n","\r"], '', $content);
