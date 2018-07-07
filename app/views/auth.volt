@@ -56,7 +56,7 @@
 												</label>
 											</div>
 											<div class="col m--align-right">
-												<a href="javascript:;" id="m_login_forget_password" class="m-link">
+												<a href="javascript:" id="m_login_forget_password" class="m-link">
 													Forgot Password ?
 												</a>
 											</div>
@@ -134,7 +134,7 @@
 						<div class="m-stack__item m-stack__item--center">
 							<div class="m-login__account">
 								<span class="m-login__account-msg">Don't have an account yet ? </span>
-								<a href="javascript:;" id="m_login_signup" class="m-link m-link--focus m-login__account-link">
+								<a href="javascript:" id="m_login_signup" class="m-link m-link--focus m-login__account-link">
 									Sign Up
 								</a>
 							</div>
