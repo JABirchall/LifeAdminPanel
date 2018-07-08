@@ -29,25 +29,25 @@
                     <span class="m-menu__arrow"></span>
                     <ul class="m-menu__subnav">
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/players/list" class="m-menu__link ">
+                            <a href="/players/list/1" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Players</span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/players/vehicles" class="m-menu__link ">
+                            <a href="/players/vehicles/1" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Vehicles</span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/players/houses" class="m-menu__link ">
+                            <a href="/players/houses/1" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Houses</span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true">
-                            <a href="/players/containers" class="m-menu__link ">
+                            <a href="/players/containers/1" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
                                 <span class="m-menu__link-text">Containers</span>
                             </a>

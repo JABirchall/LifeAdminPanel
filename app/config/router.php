@@ -19,9 +19,9 @@ $router->add('/logout','Auth::logout');
 $playerGroup = new Group();
 $playerGroup->setPrefix('/players');
 $playerGroup->addGet('/list/{page}:{0,5}', 'Player::index');
-$playerGroup->addGet('/vehicles', 'Player::vehicles');
-$playerGroup->addGet('/houses', 'Player::houses');
-$playerGroup->addGet('/containers', 'Player::container');
+$playerGroup->addGet('/vehicles/{page}:{0,5}', 'Player::vehicles');
+$playerGroup->addGet('/houses/{page}:{0,5}', 'Player::houses');
+$playerGroup->addGet('/containers/{page}:{0,5}', 'Player::container');
 $router->mount($playerGroup);
 # endregion
 

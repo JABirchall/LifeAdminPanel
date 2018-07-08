@@ -20,73 +20,52 @@ class PlayerController extends ControllerBase
         $this->view->players = $players;
     }
 
-    public function vehiclesAction()
+    public function vehiclesAction($page = 1)
     {
         $this->view->pick('vehicles');
         $this->view->title = "Edit Vehicles";
-        $this->request->getQuery('page', 'int'); // GET
-        if (isset($_GET['page'])) {
-            $currentPage = (int) $_GET['page'];
-        } else {
-            $currentPage = 1;
-        }
-        $vehicles = Vehicles::find();
 
         $paginator = new PaginatorModel(
             [
-                'data'  => $vehicles,
+                'data'  => Vehicles::find(),
                 'limit' => 50,
-                'page'  => $currentPage,
+                'page'  => $page,
             ]
         );
-        $page = $paginator->getPaginate();
-        $this->view->setVar('vehicles', $page);
+        $vehicles = $paginator->getPaginate();
+        $this->view->vehicles = $vehicles;
     }
 
-    public function housesAction()
+    public function housesAction($page = 1)
     {
         $this->view->pick('houses');
         $this->view->title = "Edit Houses";
-        $this->request->getQuery('page', 'int'); // GET
-        if (isset($_GET['page'])) {
-            $currentPage = (int) $_GET['page'];
-        } else {
-            $currentPage = 1;
-        }
-        $Houses = Houses::find();
 
         $paginator = new PaginatorModel(
             [
-                'data'  => $Houses,
+                'data'  => Houses::find(),
                 'limit' => 50,
-                'page'  => $currentPage,
+                'page'  => $page,
             ]
         );
-        $page = $paginator->getPaginate();
-        $this->view->setVar('houses', $page);
+        $Houses = $paginator->getPaginate();
+        $this->view->houses = $Houses;
     }
 
-    public function containerAction()
+    public function containerAction($page = 1)
     {
         $this->view->pick('containers');
-        $this->view->title = "View Containers";
-        $this->request->getQuery('page', 'int'); // GET
-        if (isset($_GET['page'])) {
-            $currentPage = (int) $_GET['page'];
-        } else {
-            $currentPage = 1;
-        }
-        $Containers = Containers::find();
+        $this->view->title = "Edit Containers";
 
         $paginator = new PaginatorModel(
             [
-                'data'  => $Containers,
+                'data'  => Containers::find(),
                 'limit' => 50,
-                'page'  => $currentPage,
+                'page'  => $page,
             ]
         );
-        $page = $paginator->getPaginate();
-        $this->view->setVar('containers', $page);
+        $Containers = $paginator->getPaginate();
+        $this->view->containers = $Containers;
     }
 }
 
