@@ -18,11 +18,7 @@ class AuthController extends ControllerBase
 
     public function loginAction()
     {
-
-//        if ($this->session->has('steamID')) {
-//            return $this->response->redirect('/');
-//        }
-        $this->view->pick('auth');
+        return $this->view->pick('auth');
     }
 
     public function dologinAction()

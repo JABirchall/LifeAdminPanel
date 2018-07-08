@@ -6,7 +6,7 @@ class LoggingController extends ControllerBase
 
     public function indexAction()
     {
-        Logger::Log("test","test","test");
+        Logger::Log("Repentz","Thurston","He's a shit developer, needs to be removed #Repentz");
     }
 
 }

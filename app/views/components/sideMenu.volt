@@ -6,7 +6,7 @@
          m-menu-vertical="1" m-menu-scrollable="0" m-menu-dropdown-timeout="500">
         <ul class="m-menu__nav m-menu__nav--dropdown-submenu-arrow ">
             <li class="m-menu__item m-menu__item--active" aria-haspopup="true">
-                <a href="index" class="m-menu__link ">
+                <a href="/" class="m-menu__link ">
                     <i class="m-menu__link-icon flaticon-line-graph"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
@@ -112,6 +112,17 @@
                         </li>
                     </ul>
                 </div>
+            </li>
+
+            <li class="m-menu__item m-menu__item" aria-haspopup="true">
+                <a href="/logout" class="m-menu__link ">
+                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <span class="m-menu__link-title">
+                        <span class="m-menu__link-wrap">
+                            <span class="m-menu__link-text">Logout</span>
+                        </span>
+                    </span>
+                </a>
             </li>
         </ul>
     </div>

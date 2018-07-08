@@ -89,12 +89,12 @@
 				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" style="background-image: url(assets/app/media/img//bg/bg-4.jpg)">
 					<div class="m-grid__item m-grid__item--middle">
 						<h3 class="m-login__welcome">
-							Join The Community
+							Got a suggestion?
 						</h3>
 						<p class="m-login__msg">
-							Lorem ipsum dolor sit amet, coectetuer adipiscing
+							If you have a suggestion for the panel,
 							<br>
-							elit sed diam nonummy et nibh euismod
+							come to tagKnife or Thurston!
 						</p>
 					</div>
 				</div>
