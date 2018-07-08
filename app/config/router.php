@@ -10,13 +10,15 @@ $router->setDI($di);
 $router->add('/', 'Index::index');
 $router->add('/logging', 'Logging::index');
 $router->add('/wip','Wip::index');
-$router->add('/login','Auth::index');
+$router->add('/login','Auth::login');
+$router->add('/steamlogin','Auth::dologin');
+$router->add('/logout','Auth::logout');
 #$router->add('/players','Player::index');
 
 # region Player Routes
 $playerGroup = new Group();
 $playerGroup->setPrefix('/players');
-$playerGroup->addGet('/list', 'Player::index');
+$playerGroup->addGet('/list/{page}:{0,5}', 'Player::index');
 $playerGroup->addGet('/vehicles', 'Player::vehicles');
 $playerGroup->addGet('/houses', 'Player::houses');
 $playerGroup->addGet('/containers', 'Player::container');

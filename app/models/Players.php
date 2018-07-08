@@ -3,6 +3,12 @@
 class Players extends \Phalcon\Mvc\Model
 {
 
+    const UNAUTHORISED = 0,
+          MODERATOR = 1,
+          ADMINISTRATOR = 2,
+          SLT = 3,
+          SMT = 4;
+
     /**
      *
      * @var integer

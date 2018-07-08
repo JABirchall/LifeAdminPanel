@@ -6,22 +6,28 @@ use App\Library\SteamInfo;
 /**
  * @RoutePrefix("/auth")
  */
-class AuthController extends \Phalcon\Mvc\Controller
+class AuthController extends ControllerBase
 {
     protected $steamId;
     protected $steamInfo;
 
     public function initialize()
     {
-        $this->view->disable();
+
     }
 
     public function loginAction()
     {
-        if ($this->session->has('steamID')) {
-            return $this->response->redirect();
-        }
 
+//        if ($this->session->has('steamID')) {
+//            return $this->response->redirect('/');
+//        }
+        $this->view->pick('auth');
+    }
+
+    public function dologinAction()
+    {
+        $this->view->disable();
         $openid = new LightOpenID($this->config->application->siteUrl);
         $openid->identity = SteamInfo::OPENID_URL;
 
@@ -39,26 +45,23 @@ class AuthController extends \Phalcon\Mvc\Controller
         $this->session->avatarUrl = $this->steamInfo->profilePictureMedium;
         $this->session->steamID = $this->steamInfo->steamID64;
         $this->session->name = $this->steamInfo->nick;
-        $this->session->player = Players::findFirstByPlayerid($this->steamInfo->steamID64);
+        $this->session->player = Players::findFirstByPid($this->steamInfo->steamID64);
 
-        return $this->response->redirect();
+        $this->response->redirect('/');
     }
 
     public function logoutAction()
     {
+        $this->view->disable();
         $this->session->destroy(true);
-        return $this->response->redirect();
+        return $this->response->redirect('/login');
     }
-
 
     protected function getUserInfo($id)
     {
-        $steamInfo = $this->cache->get('steam_info_' . $id);
-        if ($steamInfo === null) {
-            $json = file_get_contents(sprintf(SteamInfo::STEAM_INFO_URL, $this->config->steamApiKey, $this->steamId));
-            $json = json_decode($json, true);
-            $steamInfo = new SteamInfo($json["response"]["players"][0]);
-        }
+        $json = file_get_contents(sprintf(SteamInfo::STEAM_INFO_URL, $this->config->application->steamApiKey, $id));
+        $json = json_decode($json, true);
+        $steamInfo = new SteamInfo($json["response"]["players"][0]);
 
         $this->steamInfo = $steamInfo;
     }

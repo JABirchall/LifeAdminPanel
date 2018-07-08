@@ -75,7 +75,11 @@ $di->setShared('db', function () {
         'username' => $config->database->username,
         'password' => $config->database->password,
         'dbname'   => $config->database->dbname,
-        'charset'  => $config->database->charset
+        'charset'  => $config->database->charset,
+        'options'  => [
+            PDO::ATTR_EMULATE_PREPARES   => false,
+            PDO::ATTR_STRINGIFY_FETCHES  => false,
+        ],
     ];
 
     if ($config->database->adapter === 'Postgresql') {

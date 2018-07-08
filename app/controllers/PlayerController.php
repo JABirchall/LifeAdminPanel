@@ -4,27 +4,20 @@ use Phalcon\Paginator\Adapter\Model as PaginatorModel;
 
 class PlayerController extends ControllerBase
 {
-    public function indexAction()
+    public function indexAction($page = 1)
     {
         $this->view->pick('players');
         $this->view->title = "Edit Players";
-        $this->request->getQuery('page', 'int'); // GET
-        if (isset($_GET['page'])) {
-            $currentPage = (int) $_GET['page'];
-        } else {
-            $currentPage = 1;
-        }
-        $players = Players::find();
 
         $paginator = new PaginatorModel(
             [
-                'data'  => $players,
+                'data'  => Players::find(),
                 'limit' => 50,
-                'page'  => $currentPage,
+                'page'  => $page,
             ]
         );
-        $page = $paginator->getPaginate();
-        $this->view->setVar('players', $page);
+        $players = $paginator->getPaginate();
+        $this->view->players = $players;
     }
 
     public function vehiclesAction()

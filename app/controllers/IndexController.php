@@ -2,11 +2,22 @@
 
 class IndexController extends ControllerBase
 {
+    public function initialize()
+    {
+        return parent::initialize();
+    }
+
     public function indexAction()
     {
-       // echo (new \Phalcon\Debug\Dump())->variables($this->di);
-        $this->view->pick('layout');
-        $this->view->title = "Dashboard from ". __CLASS__."::".__FUNCTION__;
+        $this->view->pick('index');
+        $this->view->title = "Homepage";
+
+
+        $this->view->players = Players::count();
+        $this->view->eco = number_format(Players::sum(['column' => 'bankacc']), 2);
+        $this->view->vehicles = Vehicles::count();
+        $this->view->houses = Houses::count();
+
     }
 }
 
