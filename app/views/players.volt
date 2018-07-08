@@ -26,6 +26,7 @@
                         <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline" id="m_table_1" role="grid" aria-describedby="m_table_1_info" style="width: 1528px;">
                             <thead>
                                 <tr role="row">
+                                    <th style="width: 294.25px;">Database ID</th>
                                     <th style="width: 294.25px;">Player Name</th>
                                     <th style="width: 294.25px;">Player ID</th>
                                     <th style="width: 294.25px;">Bank Account</th>
@@ -38,6 +39,7 @@
                                 <tbody>
                                 {% for player in players.items %}
                                 <tr>
+                                    <td>{{ player.uid }}</td>
                                     <td>{{ player.name }}</td>
                                     <td>{{ player.pid }}</td>
                                     <td>{{ player.bankacc }}</td>
