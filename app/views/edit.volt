@@ -39,13 +39,13 @@
                                         <div class="form-group m-form__group row">
                                             <label for="example-text-input" class="col-2 col-form-label" id="player_name">Players Name</label>
                                             <div class="col-7">
-                                                <input type="text" class="form-control" readonly value="{{ player.name|e }}" id="player_name">
+                                                <input type="text" class="form-control" disabled value="{{ player.name|e }}" id="player_name">
                                             </div>
                                         </div>
                                         <div class="form-group m-form__group row">
                                             <label for="example-text-input" class="col-2 col-form-label" id="player_id">Player ID</label>
                                             <div class="col-7">
-                                                <input type="text" class="form-control" readonly value="{{ player.pid }}" id="player_id">
+                                                <input type="text" class="form-control" disabled value="{{ player.pid }}" id="player_id">
                                             </div>
                                         </div>
                                         <div class="form-group m-form__group row">
@@ -111,6 +111,35 @@
                                                     <option value="0" {% if player.adminlevel == 0 %}selected{% endif %}>Non Admin</option>
                                                     <option value="1" {% if player.adminlevel == 1 %}selected{% endif %}>Admin level 1</option>
                                                     <option value="2" {% if player.adminlevel == 2 %}selected{% endif %}>Admin level 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group m-form__group row">
+                                            <label for="example-text-input" class="col-2 col-form-label">Gang Level</label>
+                                            <div class="form-group form-md-line-input form-md-floating-label has-info">
+                                                <select class="form-control edited" id="player_admin" name="gang">
+                                                    <option value="0"  {% if player.ganglevel == 0 %}selected{% endif %}>No Gang Level</option>
+                                                    <option value="1"  {% if player.ganglevel == 1 %}selected{% endif %}>Reapers</option>
+                                                    <option value="2"  {% if player.ganglevel == 2 %}selected{% endif %}>Sloths</option>
+                                                    <option value="3"  {% if player.ganglevel == 3 %}selected{% endif %}>TC1</option>
+                                                    <option value="4"  {% if player.ganglevel == 4 %}selected{% endif %}>Tr3yWay</option>
+                                                    <option value="5"  {% if player.ganglevel == 5 %}selected{% endif %}>BlackWater PM</option>
+                                                    <option value="6"  {% if player.ganglevel == 6 %}selected{% endif %}>BlackWater Bandits</option>
+                                                    <option value="7"  {% if player.ganglevel == 7 %}selected{% endif %}>Koala Brothers</option>
+                                                    <option value="8"  {% if player.ganglevel == 8 %}selected{% endif %}>Sanjeeve</option>
+                                                    <option value="9"  {% if player.ganglevel == 9 %}selected{% endif %}>RPD</option>
+                                                    <option value="10" {% if player.ganglevel == 10 %}selected{% endif %}>Lion Heart</option>
+                                                    <option value="11" {% if player.ganglevel == 11 %}selected{% endif %}>MVR</option>
+                                                    <option value="12" {% if player.ganglevel == 12 %}selected{% endif %}>Nerf</option>
+                                                    <option value="13" {% if player.ganglevel == 13 %}selected{% endif %}>SAS</option>
+                                                    <option value="14" {% if player.ganglevel == 14 %}selected{% endif %}>Yeet</option>
+                                                    <option value="15" {% if player.ganglevel == 15 %}selected{% endif %}>Titans</option>
+                                                    <option value="16" {% if player.ganglevel == 16 %}selected{% endif %}>OAuth</option>
+                                                    <option value="17" {% if player.ganglevel == 17 %}selected{% endif %}>Sprintfield Army</option>
+                                                    <option value="18" {% if player.ganglevel == 18 %}selected{% endif %}>Trump Gang</option>
+                                                    <option value="19" {% if player.ganglevel == 19 %}selected{% endif %}>Rosso Family</option>
+                                                    <option value="20" {% if player.ganglevel == 20 %}selected{% endif %}>Bloods</option>
                                                 </select>
                                             </div>
                                         </div>

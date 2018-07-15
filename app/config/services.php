@@ -3,7 +3,7 @@
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Url;
 use Phalcon\Mvc\View\Engine\Volt;
-use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
+use Phalcon\Mvc\Model\Metadata\Files as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Flash\Direct as Flash;
 use Phalcon\Cache\Backend\Redis;
@@ -68,17 +68,17 @@ $di->set('router', function () use ($di) {
 $di->setShared('db', function () {
     $config = $this->getConfig();
 
-    //$class = Phalcon\Db\Adapter\Pdo::class . $config->database->adapter;
-    $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
+    $class = Phalcon\Db\Adapter\Pdo::class .'\\'. $config->database->adapter;
+    //$class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
     $params = [
         'host'     => $config->database->host,
         'username' => $config->database->username,
         'password' => $config->database->password,
         'dbname'   => $config->database->dbname,
         'charset'  => $config->database->charset,
-        'options'  => [
-            PDO::ATTR_EMULATE_PREPARES   => false,
-            PDO::ATTR_STRINGIFY_FETCHES  => false,
+        'options'  =>[
+            PDO::ATTR_EMULATE_PREPARES => false,
+            PDO::ATTR_STRINGIFY_FETCHES => false,
         ],
     ];
 
@@ -96,7 +96,14 @@ $di->setShared('db', function () {
  * If the configuration specify the use of metadata adapter use it or use memory otherwise
  */
 $di->setShared('modelsMetadata', function () {
-    return new MetaDataAdapter();
+    $config = $this->getConfig();
+    $metadataAdapter = new MetaDataAdapter([
+        'metaDataDir' => $config->application->cacheDir,
+    ]);
+    $metadataAdapter->setStrategy(
+        new \Phalcon\Mvc\Model\MetaData\Strategy\Annotations()
+    );
+    return $metadataAdapter;
 });
 
 /**

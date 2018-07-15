@@ -10,6 +10,7 @@ class ControllerBase extends Controller
 
     public function initialize()
     {
+
         if ($this->config->application->options->offline && !$this->dispatched) {
             $this->dispatched = true;
             return $this->dispatcher->forward(array(
@@ -34,6 +35,7 @@ class ControllerBase extends Controller
         }
 
         if ($this->user->panelLevel === Players::UNAUTHORISED) {
+
             $this->flashSession->error("Account is not authorised!");
             return $this->response->redirect("/login");
         }

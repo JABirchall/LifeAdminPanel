@@ -41,7 +41,7 @@ class AuthController extends ControllerBase
         $this->session->avatarUrl = $this->steamInfo->profilePictureMedium;
         $this->session->steamID = $this->steamInfo->steamID64;
         $this->session->name = $this->steamInfo->nick;
-        $this->session->player = Players::findFirstByPid($this->steamInfo->steamID64);
+        $this->session->player = Players::findFirstBypid($this->steamInfo->steamID64);
 
         $this->response->redirect('/');
     }

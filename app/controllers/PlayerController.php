@@ -1,6 +1,7 @@
 <?php
 
 use Phalcon\Paginator\Adapter\Model as PaginatorModel;
+use App\Library\Logger;
 
 class PlayerController extends ControllerBase
 {
@@ -33,6 +34,8 @@ class PlayerController extends ControllerBase
         $validator->validate($this->request->getPost());
 
         $player = Players::findFirstByPid($id);
+        $playerSnapshot = $player->getSnapshotData();
+
 
         if (!$player) {
             return $this->dispatcher->forward([
@@ -60,13 +63,20 @@ class PlayerController extends ControllerBase
         $player->exp_total = $this->request->getPost('xp');
         $player->exp_level = $this->request->getPost('level');
         $player->exp_perkPoints = $this->request->getPost('points');
+        $player->ganglevel = $this->request->getPost('gang');
         $player->update();
 
-        $message = "Edited: Cash - {$player->cash} ||  Bank - {$player->bankacc} || Cop - {$player->coplevel} || Medic - {$player->mediclevel} ||  Admin - {$player->adminlevel} || Donor - {$player->donorlevel} || Level - {$player->exp_level} || Points - {$player->exp_perkPoints}";
+        $message = '';
+        echo (new \Phalcon\Debug\Dump())->variables($playerSnapshot["bankacc"], $player->bankacc, ($playerSnapshot["bankacc"] !== $player->bankacc));
+        exit;
 
-        \App\Library\Logger::Log($this->session->player->pid, $player->pid, $message);
+        if($playerSnapshot["bankacc"] !== $player->bankacc) {
+            $message .= sprintf("Edited money %d to %d", $playerSnapshot["bankacc"], $player->bankacc);
+        }
 
-        return $this->response->redirect('/players/list/1'.$id);
+        Logger::Log($this->session->player->pid, $player->pid, $message);
+
+        return $this->response->redirect('/players/list/1');
     }
 
 
