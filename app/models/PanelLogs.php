@@ -36,6 +36,8 @@ class PanelLogs extends \Phalcon\Mvc\Model
     {
         $this->setSchema("maldenlife");
         $this->setSource("panellogs");
+        $this->hasOne('admin_uid', "Players", "pid", ["alias" => "admin"]);
+        $this->hasOne('user_uid', "Players", "pid", ["alias" => "player"]);
     }
 
     /**

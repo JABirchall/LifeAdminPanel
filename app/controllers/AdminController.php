@@ -11,6 +11,7 @@ class AdminController extends ControllerBase
 
     public function viewlogAction()
     {
+
         $this->view->pick('logs');
         $this->view->title = "Staff Logs";
         $this->request->getQuery('page', 'int');

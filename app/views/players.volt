@@ -10,7 +10,6 @@
             </div>
         </div>
         <div class="m-portlet__body">
-            <!--begin: Datatable -->
             <div id="m_table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
@@ -34,6 +33,7 @@
                                     <th style="width: 294.25px;">Cop Level</th>
                                     <th style="width: 294.25px;">Medic Level</th>
                                     <th style="width: 294.25px;">Admin Level</th>
+                                    <th style="width: 294.25px;">Edit Player</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -47,6 +47,9 @@
                                     <td>{{ player.coplevel }}</td>
                                     <td>{{ player.mediclevel }}</td>
                                     <td>{{ player.adminlevel }}</td>
+                                    <td>
+                                        <a class="btn btn-info" href="/players/edit/{{ player.pid }}">Edit</a>
+                                    </td>
                                 </tr>
                                 {% endfor %}
                             </tbody>

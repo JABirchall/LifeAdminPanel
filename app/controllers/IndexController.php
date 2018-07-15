@@ -7,7 +7,7 @@ class IndexController extends ControllerBase
         return parent::initialize();
     }
 
-    public function indexAction()
+    public function indexAction($id = null)
     {
         $this->view->pick('dashboard');
         $this->view->title = "Homepage";
@@ -15,6 +15,15 @@ class IndexController extends ControllerBase
         $this->view->eco = number_format(Players::sum(['column' => 'bankacc']), 2);
         $this->view->vehicles = Vehicles::count();
         $this->view->houses = Houses::count();
+
+
+        if ($id === null && !$this->session->has('steamID')) {
+            return $this->response->redirect("/login");
+        }
+
+        if ($id === null) {
+            $id = $this->session->steamID;
+        }
     }
 }
 

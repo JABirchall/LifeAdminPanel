@@ -36,8 +36,8 @@
                             {% for panellogs in logs.items %}
                                 <tr>
                                     <td>{{ panellogs.id }}</td>
-                                    <td>{{ panellogs.admin_uid }}</td>
-                                    <td>{{ panellogs.user_uid }}</td>
+                                    <td>{{ panellogs.admin.name }} [{{ panellogs.admin.pid }}]</td>
+                                    <td>{{ panellogs.player.name }} [{{ panellogs.player.pid }}]</td>
                                     <td>{{ panellogs.action }}</td>
                                 </tr>
                             {% endfor %}
