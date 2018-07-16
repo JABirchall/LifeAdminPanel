@@ -8,7 +8,6 @@ $router->setDI($di);
 # endregion
 
 $router->add('/', 'Index::index');
-$router->add('/logging', 'Logging::index');
 $router->add('/wip','Wip::index');
 $router->add('/login','Auth::login');
 $router->add('/steamlogin','Auth::dologin');

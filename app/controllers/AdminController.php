@@ -20,7 +20,7 @@ class AdminController extends ControllerBase
         } else {
             $currentPage = 1;
         }
-        $PanelLogs = panellogs::find();
+        $PanelLogs = panellogs::find(['order' => 'id DESC']);
 
         $paginator = new PaginatorModel(
             [

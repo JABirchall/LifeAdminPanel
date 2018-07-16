@@ -9,6 +9,7 @@ class Logger
         $log->admin_uid = $admin;
         $log->user_uid = $user;
         $log->action = $action;
+        $log->datetime = \Carbon\Carbon::now()->toDateTimeString();
         if(!$log->create()) {
             echo $log->getMessages()[0];
         }

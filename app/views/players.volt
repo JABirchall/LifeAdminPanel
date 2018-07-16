@@ -15,8 +15,9 @@
                     <div class="col-sm-12 col-md-6">
                         <div id="m_table_1_filter" class="dataTables_filter">
                             <label>Search:
-                                <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="m_table_1">
+                                <input type="search" class="form-control form-control-sm" placeholder="PlayerID" aria-controls="m_table_1">
                             </label>
+                            <button type="submit" class="btn btn-dark" id="submit">Submit</button>
                         </div>
                     </div>
                 </div>

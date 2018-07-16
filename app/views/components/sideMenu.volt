@@ -34,6 +34,7 @@
                                 <span class="m-menu__link-text">Players</span>
                             </a>
                         </li>
+                        {% if user.panelLevel >= constant('Players::SM') %}
                         <li class="m-menu__item " aria-haspopup="true">
                             <a href="/players/vehicles/1" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
@@ -52,9 +53,11 @@
                                 <span class="m-menu__link-text">Containers</span>
                             </a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </li>
+            {% if user.panelLevel >= constant('Players::HA') %}
             <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
                 <a href="javascript:" class="m-menu__link m-menu__toggle">
                     <i class="m-menu__link-icon flaticon-layers"></i>
@@ -79,6 +82,8 @@
                     </ul>
                 </div>
             </li>
+            {% endif %}
+            {% if user.panelLevel >= constant('Players::CM') %}
             <li class="m-menu__section ">
                 <h4 class="m-menu__section-text">SMT Section</h4>
                 <i class="m-menu__section-icon flaticon-more-v3"></i>
@@ -113,7 +118,7 @@
                     </ul>
                 </div>
             </li>
-
+            {% endif %}
             <li class="m-menu__item m-menu__item" aria-haspopup="true">
                 <a href="/logout" class="m-menu__link ">
                     <i class="m-menu__link-icon flaticon-line-graph"></i>

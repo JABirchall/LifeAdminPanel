@@ -125,13 +125,6 @@ class Vehicles extends \Phalcon\Mvc\Model
     public $tuning_data;
 
     /**
-     *
-     * @var string
-     * @Column(type="string", nullable=true)
-     */
-    public $vis;
-
-    /**
      * Initialize method for model.
      */
     public function initialize()

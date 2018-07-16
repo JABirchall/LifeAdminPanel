@@ -26,7 +26,7 @@
                         <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline" id="m_table_1" role="grid" aria-describedby="m_table_1_info" style="width: 1528px;">
                             <thead>
                             <tr role="row">
-                                <th style="width: 294.25px;">Database ID</th>
+                                <th style="width: 294.25px;">Timestamp</th>
                                 <th style="width: 294.25px;">Admin</th>
                                 <th style="width: 294.25px;">Player Edited</th>
                                 <th style="width: 294.25px;">Action</th>
@@ -35,7 +35,7 @@
                             <tbody>
                             {% for panellogs in logs.items %}
                                 <tr>
-                                    <td>{{ panellogs.id }}</td>
+                                    <td>{{ panellogs.datetime.toDayDateTimeString() }}</td>
                                     <td>{{ panellogs.admin.name }} [{{ panellogs.admin.pid }}]</td>
                                     <td>{{ panellogs.player.name }} [{{ panellogs.player.pid }}]</td>
                                     <td>{{ panellogs.action }}</td>

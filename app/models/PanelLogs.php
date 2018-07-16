@@ -12,19 +12,25 @@ class PanelLogs extends \Phalcon\Mvc\Model
     public $id;
 
     /**
-     *
+     * @Column(type="string", length=6, nullable=false)
+     * @var integer
+     */
+    public $datetime;
+
+    /**
+     * @Column(type="string", length=17, nullable=false)
      * @var string
      */
     public $admin_uid;
 
     /**
-     *
+     * @Column(type="string", length=17, nullable=false)
      * @var string
      */
     public $user_uid;
 
     /**
-     *
+     * @Column(type="string", nullable=false)
      * @var string
      */
     public $action;
@@ -70,6 +76,22 @@ class PanelLogs extends \Phalcon\Mvc\Model
     public static function findFirst($parameters = null)
     {
         return parent::findFirst($parameters);
+    }
+
+    public function beforeSave()
+    {
+        if($this->datetime instanceof \Carbon\Carbon) {
+            $this->datetime = $this->datetime->toDateTimeString();
+            return true;
+        }
+
+        $this->datetime = \Carbon\Carbon::now()->toDateTimeString();
+        return true;
+    }
+
+    public function afterFetch()
+    {
+        $this->datetime = (isset($this->datetime)) ? \Carbon\Carbon::parse($this->datetime) : \Carbon\Carbon::now();
     }
 
 }
