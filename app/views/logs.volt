@@ -10,7 +10,6 @@
             </div>
         </div>
         <div class="m-portlet__body">
-            <!--begin: Datatable -->
             <div id="m_table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">

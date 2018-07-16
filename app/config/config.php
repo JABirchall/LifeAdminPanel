@@ -30,7 +30,7 @@ return new \Phalcon\Config([
         // of the webpspace.  This will break if the public/index.php entry point is moved or
         // possibly if the web server rewrite rules are changed. This can also be set to a static path.
         'baseUri'        => '/',
-        'siteUrl' => "psisyn.local",
+        'siteUrl' => "167.99.87.130",
 
         'options' => [
             'environment' => 'dev',
