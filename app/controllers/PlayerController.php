@@ -76,7 +76,8 @@ class PlayerController extends ControllerBase
         $message .= ($playerSnapshot["ganglevel"] !== $player->ganglevel) ? sprintf("Players Gang Level Changed from %d to %d | ", $playerSnapshot["ganglevel"], $player->ganglevel) : '';
         $message .= ($playerSnapshot["exp_level"] !== $player->exp_level) ? sprintf("Players EXP Level changed from %d to %d | ", $playerSnapshot["exp_level"], $player->exp_level) : '';
         $message .= ($playerSnapshot["exp_perkPoints"] !== $player->exp_perkPoints) ? sprintf("Players Perk Points changed from %d to %d | ", $playerSnapshot["exp_perkPoints"], $player->exp_perkPoints) : '';
-        $message .= ($playerSnapshot["exp_total"] !== $player->exp_total) ? sprintf("Players Total EXP changed from %d to %d", $playerSnapshot["exp_total"], $player->exp_total) : '';
+        $message .= ($playerSnapshot["exp_total"] !== $player->exp_total) ? sprintf("Players Total EXP changed from %d to %d | ", $playerSnapshot["exp_total"], $player->exp_total) : '';
+        $message .= ($playerSnapshot["panelLevel"] !== $player->panelLevel) ? sprintf("!!! Users Admin Level changed from %d to %d !!!", $playerSnapshot["panelLevel"], $player->panelLevel) : '';
 
         Logger::Log($this->session->player->pid, $player->pid, $message);
 
