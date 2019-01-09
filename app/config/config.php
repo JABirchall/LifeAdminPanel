@@ -9,10 +9,10 @@ defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 return new \Phalcon\Config([
     'database' => [
         'adapter'     => 'Mysql',
-        'host'        => '158.69.120.213',
-        'username'    => 'adminpanel',
-        'password'    => '814510124',
-        'dbname'      => 'maldenlife',
+        'host'        => '',
+        'username'    => '',
+        'password'    => '',
+        'dbname'      => '',
         'charset'     => 'utf8',
     ],
 
@@ -30,7 +30,7 @@ return new \Phalcon\Config([
         // of the webpspace.  This will break if the public/index.php entry point is moved or
         // possibly if the web server rewrite rules are changed. This can also be set to a static path.
         'baseUri'        => '/',
-        'siteUrl' => "167.99.87.130",
+        'siteUrl' => "",
 
         'options' => [
             'environment' => 'dev',
@@ -40,7 +40,7 @@ return new \Phalcon\Config([
             'notice' => ''
         ],
 
-        'steamApiKey' => 'B0D1BCF3375162D6668741791694A971',
+        'steamApiKey' => '',
 
         'rcon' => [
             'ip' => '',
