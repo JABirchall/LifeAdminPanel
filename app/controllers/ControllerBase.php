@@ -13,11 +13,11 @@ class ControllerBase extends Controller
 
         if ($this->config->application->options->offline && !$this->dispatched) {
             $this->dispatched = true;
-            return $this->dispatcher->forward(array(
+            return $this->dispatcher->forward([
                 'controller' => 'Index',
                 'action' => 'httpError',
                 'params' => [$this->config->application->options->offlineMessage, 401, 'Unauthorized']
-            ));
+            ]);
         }
 
         if (!$this->session->steamID) {
